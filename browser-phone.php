@@ -32,7 +32,7 @@ $token->allowClientIncoming("alice");
 		</title>
 		<!-- @start snippet -->
 		<script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
 
