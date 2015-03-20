@@ -1,12 +1,25 @@
 <?php
 // @start snippet
-include 'Services/Twilio/Capability.php';
+// include 'Services/Twilio/Capability.php';
 
-$accountSid = 'ACxxxxxxxxxxxxxxx';
-$authToken  = 'xxxxxxxxxxxxxxxxx';
+require('vendor/autoload.php');
+
+/*
+ * SETUP environment vars for application in Heroku
+ *
+ * Twilio SID and TOKEN can be found here: https://www.twilio.com/user/account/
+ * heroku config:set TWILIO_SID=Azzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+ * heroku config:set TWILIO_TOKEN=Azzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+ * heroku config:set TWILIO_APPSID=Azzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+ *
+ */
+
+$accountSid	= getenv('TWILIO_SID');
+$authToken	= getenv('TWILIO_TOKEN');
+$appSid			= getenv('TWILIO_APPSID');
 
 $token = new Services_Twilio_Capability($accountSid, $authToken);
-$token->allowClientOutgoing('APxxxxxxxxxxxxxxx');
+$token->allowClientOutgoing($appSid);
 $token->allowClientIncoming("alice");
 // @end snippet
 ?>
